@@ -1,13 +1,14 @@
 // Starting scores, they reset at the start of each game
 let playerScore = 0;
 let compScore = 0;
-
+let compChoice = '';
 
 // Picks random options for the computer
 function computerPlay() {
     const options = ["rock", "paper", "scissors"];
     let randomIndex = Math.floor(Math.random() * 3);
-    return options[randomIndex];
+    compChoice = options[randomIndex];
+    return compChoice;
 }
 
 
@@ -29,6 +30,31 @@ function playRound (playerSelection, comp) {
 }
 
 
+// Add functionality to buttons
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach(choice);
+
+function choice (button) {
+    button.addEventListener('click', function (e) {
+    const content = document.querySelector('.results');
+    content.textContent = playRound(button.id,computerPlay());
+    // Show or refresh the computer choice
+    compContainer.textContent = `COMPUTER CHOICE: ${compChoice}`;
+    // Show or refresh scores
+    scoresContainer.textContent = `Player: ${playerScore}  -  Computer: ${compScore}`;
+    });
+};
+
+
+// Show computer choice
+const compContainer = document.querySelector('.computer-choice');
+
+
+// Show scores
+const scoresContainer = document.querySelector('.scores');
+
+
 // Play a game until one of the competitors reaches 5 wins
 function game() {
     playerScore = 0;
@@ -48,5 +74,3 @@ function game() {
         
     }
 }
-
-game();
