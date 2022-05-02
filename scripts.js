@@ -18,12 +18,15 @@ function playRound (playerSelection, comp) {
     const player = playerSelection.toLowerCase();
 
     if (player === comp) {
+        content.style.color = 'yellow';
         return `It's a tie ${player} vs ${comp}.`;
     } else if ( (player === "rock" && comp === "scissors") || (player === "paper" && comp === "rock") || (player === "scissors" && comp === "paper")) {
         playerScore++;
+        content.style.color = 'green';
         return `You win! ${player} beats ${comp}.`;
     } else {
         compScore++;
+        content.style.color = 'red';
         return `You lose! ${player} loses against ${comp}.`;
     }
     
@@ -54,11 +57,13 @@ function choice (button) {
     scoresContainer.textContent = `Player: ${playerScore}  -  Computer: ${compScore}`;
 
     if (playerScore >= 5) {
-        content.textContent = "Congrats! You won the match.";
+        content.style.color = 'green';
+        content.textContent = "CONGRATS! YOU WON THE MATCH";
         playAgain.style.display = 'flex';   
     }
     if (compScore >= 5) {
-        content.textContent = 'You lost the match. Better luck next time';
+        content.style.color = 'red';
+        content.textContent = 'YOU LOST THE MATCH. BETTER LUCK NEXT TIME';
         playAgain.style.display = 'flex';
     }
     });
