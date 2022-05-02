@@ -31,7 +31,7 @@ body {
 	height: 15vh;
 	background-color: greenyellow;
 	border: 2px solid greenyellow;
-	margin: 15px;
+	margin: 10px;
 	transition-duration: 0.4s;
 	font-size: 50px;
 }
@@ -53,13 +53,13 @@ button:hover {
 .computer-choice {
 	font-size: large;
 	font-weight: bold;
-	margin: 15px;
+	margin: 10px;
 }
 
 .results {
-	margin: 15px;
+	margin: 10px;
 }
 
 .scores {
-	margin: 15px;
+	margin: 10px;
 }
