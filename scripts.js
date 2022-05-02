@@ -3,6 +3,7 @@ let playerScore = 0;
 let compScore = 0;
 let compChoice = '';
 
+
 // Picks random options for the computer
 function computerPlay() {
     const options = ["rock", "paper", "scissors"];
@@ -10,7 +11,6 @@ function computerPlay() {
     compChoice = options[randomIndex];
     return compChoice;
 }
-
 
 
 // Simulate a round, compare the result and update the scores
@@ -30,15 +30,21 @@ function playRound (playerSelection, comp) {
 }
 
 
+// Show computer choice
+const compContainer = document.querySelector('.computer-choice');
+
+// Show scores
+const scoresContainer = document.querySelector('.scores');
+
 // Add functionality to buttons
 const buttons = document.querySelectorAll('.main button');
-
 
 buttons.forEach(choice);
 const content = document.querySelector('.results');
 
+
 function choice (button) {
-    button.addEventListener('click', function playGame (e) {
+    button.addEventListener('click', function playGame(e) {
     if (playerScore < 5 && compScore < 5) {
     content.textContent = playRound(button.id,computerPlay());
     }
@@ -57,14 +63,6 @@ function choice (button) {
     }
     });
 };
-
-
-// Show computer choice
-const compContainer = document.querySelector('.computer-choice');
-
-
-// Show scores
-const scoresContainer = document.querySelector('.scores');
 
 
 // Play again button

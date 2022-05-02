@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors</title>
     <script async src="scripts.js"></script>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="header"><h1>Rock, Paper, Scissors</h1></div>
+        <div class="header">
+            <h1>Rock, Paper, Scissors</h1>
+            <p>Can you defeat this <strong>fearles machine</strong>  in a First to 5 duel?</p>
+        </div>
         <div class="main">
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
-            
+            <div class="buttons">
+                <button id="rock">&#9994</button>
+                <button id="paper">&#9995</button>
+                <button id="scissors">&#9996</button>
+            </div>
+
             <div class="computer-choice"></div>
             
             <div class="results"></div>
@@ -22,9 +28,9 @@
             <div class="scores"></div>
 
         </div>
-        
-        <button id="play-again">Play again</button>
-
+        <div class="hidden">
+            <button id="play-again">Play again</button>
+        </div>
         <div class="footer"></div>
 
 

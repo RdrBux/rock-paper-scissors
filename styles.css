@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap');
+
+body {
+	font-family: 'Press Start 2P', Verdana, 'Geneva', Tahoma, sans-serif;
+	background-color: black;
+	color: greenyellow;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 50px;
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.main button {
+	width: 15vh;
+	height: 15vh;
+	background-color: greenyellow;
+	border: 2px solid greenyellow;
+	margin: 30px;
+	transition-duration: 0.4s;
+	font-size: 50px;
+}
+
+.hidden button{
+	font-family: 'Press Start 2P', Verdana, 'Geneva', Tahoma, sans-serif;
+	background-color: greenyellow;
+	border: 2px solid greenyellow;
+	padding: 15px;
+	transition-duration: 0.4s;
+	margin: 30px;
+}
+
+button:hover {
+	background-color: black;
+	color: greenyellow;
+}
+
+.computer-choice {
+	font-size: large;
+	font-weight: bold;
+}
+
+.results {
+	margin: 30px;
+}
