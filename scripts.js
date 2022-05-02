@@ -31,18 +31,30 @@ function playRound (playerSelection, comp) {
 
 
 // Add functionality to buttons
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.main button');
+
 
 buttons.forEach(choice);
+const content = document.querySelector('.results');
 
 function choice (button) {
-    button.addEventListener('click', function (e) {
-    const content = document.querySelector('.results');
+    button.addEventListener('click', function playGame (e) {
+    if (playerScore < 5 && compScore < 5) {
     content.textContent = playRound(button.id,computerPlay());
+    }
     // Show or refresh the computer choice
     compContainer.textContent = `COMPUTER CHOICE: ${compChoice}`;
     // Show or refresh scores
     scoresContainer.textContent = `Player: ${playerScore}  -  Computer: ${compScore}`;
+
+    if (playerScore >= 5) {
+        content.textContent = "Congrats! You won the match.";
+        playAgain.style.display = 'flex';   
+    }
+    if (compScore >= 5) {
+        content.textContent = 'You lost the match. Better luck next time';
+        playAgain.style.display = 'flex';
+    }
     });
 };
 
@@ -55,22 +67,14 @@ const compContainer = document.querySelector('.computer-choice');
 const scoresContainer = document.querySelector('.scores');
 
 
-// Play a game until one of the competitors reaches 5 wins
-function game() {
+// Play again button
+const playAgain = document.querySelector('#play-again');
+playAgain.style.display = 'none';
+playAgain.addEventListener('click', function (e) {
     playerScore = 0;
     compScore = 0;
-
-    while (true) {
-        console.log(playRound(prompt(),computerPlay()));
-        console.log(`SCORE: Player: ${playerScore} vs Computer: ${compScore}`);
-        if (playerScore === 5) {
-            console.log("Congrats! You won the match.");
-            break;
-        }
-        if (compScore === 5) {
-            console.log("You lost the match. Better luck next time");
-            break;
-        }
-        
-    }
-}
+    scoresContainer.textContent = '';
+    content.textContent = '';
+    compContainer.textContent = '';
+    playAgain.style.display = 'none';
+})
